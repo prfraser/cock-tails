@@ -11,3 +11,8 @@ margarita = {
 negroni = {
 	spirits: [:gin, :campari, :sweet_vermouth]
 }
+
+french_75 = {
+	spirits: [:champagne, :gin],
+	other: [:lemon_juice, :simple_syrup]
+}
