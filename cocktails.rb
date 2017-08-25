@@ -11,3 +11,8 @@ margarita = {
 negroni = {
 	spirits: [:gin, :campari, :sweet_vermouth]
 }
+
+gin_and_tonic = {
+	spirits: [:gin],
+	other: [:tonic, :lime, :cucumber]
+}
