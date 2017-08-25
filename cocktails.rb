@@ -16,3 +16,8 @@ manhattan = {
 	spirits: [:whiskey, :vermouth],
 	other: [:bitters, :cherry]
 }
+
+gin_and_tonic = {
+	spirits: [:gin],
+	other: [:tonic, :lime, :cucumber]
+}
