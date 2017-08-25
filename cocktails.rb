@@ -15,4 +15,13 @@ negroni = {
 french_75 = {
 	spirits: [:champagne, :gin],
 	other: [:lemon_juice, :simple_syrup]
+
+manhattan = {
+	spirits: [:whiskey, :vermouth],
+	other: [:bitters, :cherry]
+}
+
+gin_and_tonic = {
+	spirits: [:gin],
+	other: [:tonic, :lime, :cucumber]
 }
