@@ -14,5 +14,23 @@ recipe_hash = {
 	white_russian: [:coffee_liquer, :vodka],
 	daiquiri: [:rum],
 	bloody_mary: [:vodka],
+	whiskey_sour: [:whiskey],
+	long_island_ice_tea: [:tequila, :vodka, :triple_sec, :gin, :white_rum],
+	fizz: [:gin],
+	mai_tai: [:white_rum, :dark_rum, :orange_curacao],
+	mint_julep: [:whiskey],
+	pina_colada: [:white_rum],
+	sidecar: [:cognac, :triple_sec],
+	moscow_mule: [:vodka],
+	tequila_sunrise: [:tequila],
+	tom_collins: [:gin],
+	gimlet: [:gin],
+	sex_on_the_beach: [:vodka, :peach_schnapps],
+	bellini: [:prosecco],
+	dark_n_stormy: [:dark_rum],
+	cuba_libre: [:white_rum],
+	black_russian: [:coffee_liquer, :vodka],
+	sea_breeze: [:vodka],
+
 
 }
