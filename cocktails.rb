@@ -33,14 +33,18 @@ recipe_hash = {
 	sea_breeze: [:vodka],
 }
 
-puts "Enter 1 for whiskey			Enter 9 for dry vermouth"
-puts "Enter 2 for rum				Enter 10 for sweet vermouth"
-puts "Enter 3 for vodka			Enter 11 for red vermouth"
-puts "Enter 4 for tequila			Enter 12 for vodka citron"
-puts "Enter 5 for gin				Enter 13 for cognac"
-puts "Enter 6 for cointreau			Enter 14 for creme de menthe"
-puts "Enter 7 for campari			Enter 15 for coffee liqueur"
-puts "Enter 8 for champagne"
+puts "Enter 1 for whiskey			Enter 12 for white rum"
+puts "Enter 2 for rum				Enter 13 for dark rum"
+puts "Enter 3 for vodka			Enter 14 for triple sec"
+puts "Enter 4 for tequila			Enter 15 for vodka citron"
+puts "Enter 5 for gin				Enter 16 for cognac"
+puts "Enter 6 for cointreau			Enter 17 for creme de menthe"
+puts "Enter 7 for campari			Enter 18 for coffee liqueur"
+puts "Enter 8 for champagne			Enter 19 for prosecco"
+puts "Enter Enter 9 for dry vermouth		Enter 20 for peach schnapps"
+puts "Enter Enter 10 for sweet vermouth	Enter 21 for orange curacao"
+puts "Enter Enter 11 for red vermouth"
+
 
 $user_choice = gets.chomp.to_i
 
@@ -68,11 +72,23 @@ case $user_choice
 	when 11
 		puts :red_vermouth
 	when 12
-		puts :vodka_citron
+		puts :white_rum
 	when 13
-		puts :cognac
+		puts :dark_rum
 	when 14
-		puts :creme_de_menthe
+		puts :triple_sec
 	when 15
+		puts :vodka_citron
+	when 16
+		puts :cognac
+	when 17
+		puts :creme_de_menthe
+	when 18
 		puts :coffee_liquer
+	when 19
+		puts :prosecco
+	when 20
+		puts :peach_schnapps
+	when 21
+		puts :orange_curacao
 	end
