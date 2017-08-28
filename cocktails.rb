@@ -74,7 +74,7 @@ def find_recipe(recipe)
 end
 
 puts "Give a spirit: "
-$user_choice = gets.chomp.to_sym
+$user_choice = gets.chomp.gsub!(' ','_').to_sym # gsub to change spaces to underscores
 
 recipe_find_hash.each do |k,v|
 	puts find_recipe(k) if v.include? $user_choice
