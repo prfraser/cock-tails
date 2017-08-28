@@ -1,6 +1,6 @@
-#cocktail name and spirits hash
+#Cocktail name and spirits hash
 
-recipe_find_hash = {
+$recipe_find_hash = {
 
 	old_fashioned: [:whiskey],
 	margarita: [:tequila, :cointreau],
@@ -36,7 +36,7 @@ recipe_find_hash = {
 }
 
 
-# hash of all drinks, ingredients and recipes
+#Hash of all drinks, ingredients and recipes
 
 $recipe_hash = {
 	old_fashioned: ["Old Fashioned", "Ingredients: 1 1/2 oz Bourbon or Rye whiskey, 2 dashes Angostura bitters, 1 Sugar cube, Few dashes plain water
@@ -78,30 +78,42 @@ $recipe_hash = {
 # end
 
 
-$options = [:whiskey, :rum, :vodka, :tequila, :gin, :cointreau, :campari, :champagne, :dry_vermouth, :sweet_vermouth, :red_vermouth, :white_rum, :dark_rum, :triple_sec, :vodka_citron, :cognac, :creme_de_menthe, :coffee_liquer, :prosecco, :peach_schnapps, :orange_curacao]
-$results = [] #once user inputs have been pushed here, iterate through and find correlations to recipe_find_hash and puts them to the screen, which after the user chooses a drink will then search through recipe_hash, find that recipe and iterate through to display Drink Name, Ingredients and Preparation.
+$options = [:whiskey, :rum, :vodka, :tequila, :gin, :cointreau, :campari, :champagne, :dry_vermouth, :sweet_vermouth, :red_vermouth, :white_rum, :dark_rum, :triple_sec, :vodka_citron, :cognac, :creme_de_menthe, :coffee_liquer, :prosecco, :peach_schnapps, :orange_curacao] #Sets list of avaiable ingredients to be used for user input
+$results = [] #Once user inputs have been pushed here, iterate through and find correlations to recipe_find_hash and puts them to the screen, which after the user chooses a drink will then search through recipe_hash, find that recipe and iterate through to display Drink Name, Ingredients and Preparation.
+
+$count = 0
 
 def collect
 	puts "Give a spirit: "
 	$user_choice = gets.chomp.gsub(' ','_').to_sym
-	if $options.include?($user_choice) == false #if user inputs an option that isn't in options hash
+	if $options.include?($user_choice) == false #If user inputs an option that isn't in options hash
 		puts "Sorry, We dont have that spirit."
+		$count -= 1
 	else
-		$results.push($user_choice) #pushes the user input to the results hash
+		$results.push($user_choice) #Pushes the user input to the results hash
+		puts "Ingredients in list: #{$results.count}"
 	end
 end
 
 
 def startup
-puts "Enter four alcohol choices: "
-	loop do
+	puts "--Enter four alcohol choices--"
+	while $count <4
 		collect
-		break if #end program with exit message
-		$user_choice == :exit
+		$count += 1
+		break if $user_choice == :exit #End program with exit message
 	end
+	puts "You've chosen #{$results.to_s.gsub(":","").gsub("_"," ")}"
 end
 
+def serve
+	puts $recipe_find_hash.fetch($results, "no match")
+end
+
+
 startup
+serve
+
 
 
 
