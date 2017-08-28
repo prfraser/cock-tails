@@ -1,3 +1,5 @@
+#cocktail name and spirits hash
+
 recipe_find_hash = {
 
 	old_fashioned: [:whiskey],
@@ -34,6 +36,8 @@ recipe_find_hash = {
 }
 
 
+# hash of all drinks, ingredients and recipes
+
 $recipe_hash = {
 	old_fashioned: ["Old Fashioned", "Ingredients: 1 1/2 oz Bourbon or Rye whiskey, 2 dashes Angostura bitters, 1 Sugar cube, Few dashes plain water
 ", "Preparation: Place sugar cube in old fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolved. Fill the glass with ice cubes and add whiskey. Garnish with orange slice, and a cocktail cherry."],
@@ -69,75 +73,106 @@ $recipe_hash = {
 	sea_breeze: ["Sea Breeze", "Ingredients: 4 oz Cranberry juice, 1 1/3 oz Vodka, 1 oz Grapefruit juice", "Preparation: Build all ingredients in a highball glass filled with ice. Garnish with lime wedge."],
 	}
 
-def find_recipe(recipe)
-	puts $recipe_hash[recipe]
+# def find_recipe(recipe)
+# 	 $recipe_hash[recipe]
+# end
+
+$options = [:whiskey, :rum, :vodka, :tequila, :gin, :cointreau, :campari, :champagne, :dry_vermouth, :sweet_vermouth, :red_vermouth, :white_rum, :dark_rum, :triple_sec, :vodka_citron, :cognac, :creme_de_menthe, :coffee_liquer, :prosecco, :peach_schnapps, :orange_curacao]
+$results = [] #once user inputs have been pushed here, iterate through and find correlations to recipe_find_hash and puts them to the screen, which after the user chooses a drink will then search through recipe_hash, find that recipe and iterate through to display Drink Name, Ingredients and Preparation.
+
+def collect
+	puts "Give a spirit: "
+	user_choice = gets.chomp.to_sym
+	if $options.include?(user_choice) == false #if user inputs an option that isn't in options hash
+		puts "Sorry, We dont have that spirit."
+	else
+		$results.push(user_choice) #pushes the user input to the results hash
+	end
 end
 
-puts "Give a spirit: "
-$user_choice = gets.chomp.to_sym
-
-recipe_find_hash.each do |k,v|
-	puts find_recipe(k) if v.include? $user_choice
+def startup
+puts "Enter four alcohol choices: "
+	loop do
+		collect
+		break if
+		user_choice == ":exit"
+	end
 end
 
+startup
 
 
-# puts "Enter 1 for whiskey			Enter 12 for white rum"
-# puts "Enter 2 for rum				Enter 13 for dark rum"
-# puts "Enter 3 for vodka			Enter 14 for triple sec"
-# puts "Enter 4 for tequila			Enter 15 for vodka citron"
-# puts "Enter 5 for gin				Enter 16 for cognac"
-# puts "Enter 6 for cointreau			Enter 17 for creme de menthe"
-# puts "Enter 7 for campari			Enter 18 for coffee liqueur"
-# puts "Enter 8 for champagne			Enter 19 for prosecco"
-# puts "Enter Enter 9 for dry vermouth		Enter 20 for peach schnapps"
-# puts "Enter Enter 10 for sweet vermouth	Enter 21 for orange curacao"
-# puts "Enter Enter 11 for red vermouth"
+
+
+# 	recipe_find_hash.each do |k,v|
+# 	 find_recipe(k) if v.include? $user_choice
+# end
+
+
+
+
+
+
+
+
+
+
+#  "Enter 1 for whiskey			Enter 12 for white rum"
+#  "Enter 2 for rum				Enter 13 for dark rum"
+#  "Enter 3 for vodka			Enter 14 for triple sec"
+#  "Enter 4 for tequila			Enter 15 for vodka citron"
+#  "Enter 5 for gin				Enter 16 for cognac"
+#  "Enter 6 for cointreau			Enter 17 for creme de menthe"
+#  "Enter 7 for campari			Enter 18 for coffee liqueur"
+#  "Enter 8 for champagne			Enter 19 for prosecco"
+#  "Enter Enter 9 for dry vermouth		Enter 20 for peach schnapps"
+#  "Enter Enter 10 for sweet vermouth	Enter 21 for orange curacao"
+#  "Enter Enter 11 for red vermouth"
 #
 #
 # $user_choice = gets.chomp.to_i
 #
 # case $user_choice
-# 	when 1
-# 		puts :whiskey
-# 	when 2
-# 		puts :rum
-# 	when 3
-# 		puts :vodka
-# 	when 4
-# 		puts :tequila
-# 	when 5
-# 		puts :gin
-# 	when 6
-# 		puts :cointreau
-# 	when 7
-# 		puts :campari
-# 	when 8
-# 		puts :champagne
-# 	when 9
-# 		puts :dry_vermouth
-# 	when 10
-# 		puts :sweet_vermouth
-# 	when 11
-# 		puts :red_vermouth
-# 	when 12
-# 		puts :white_rum
-# 	when 13
-# 		puts :dark_rum
-# 	when 14
-# 		puts :triple_sec
-# 	when 15
-# 		puts :vodka_citron
-# 	when 16
-# 		puts :cognac
-# 	when 17
-# 		puts :creme_de_menthe
-# 	when 18
-# 		puts :coffee_liquer
-# 	when 19
-# 		puts :prosecco
-# 	when 20
-# 		puts :peach_schnapps
-# 	when 21
-# 		puts :orange_curacao
+# 	 1
+# 		 :whiskey
+# 	 2
+# 		 :rum
+# 	 3
+# 		 :vodka
+# 	 4
+# 		 :tequila
+# 	 5
+# 		 :gin
+# 	 6
+# 		 :cointreau
+# 	 7
+# 		 :campari
+# 	 8
+# 		 :champagne
+# 	 9
+# 		 :dry_vermouth
+# 	 10
+# 		 :sweet_vermouth
+# 	 11
+# 		 :red_vermouth
+# 	 12
+# 		 :white_rum
+# 	 13
+# 		 :dark_rum
+# 	 14
+# 		 :triple_sec
+# 	 15
+# 		 :vodka_citron
+# 	 16
+# 		 :cognac
+# 	 17
+# 		 :creme_de_menthe
+# 	 18
+# 		 :coffee_liquer
+# 	 19
+# 		 :prosecco
+# 	 20
+# 		 :peach_schnapps
+# 	 21
+# 		 :orange_curacao
 # 	end
