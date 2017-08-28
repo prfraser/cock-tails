@@ -77,18 +77,20 @@ $recipe_hash = {
 # 	 $recipe_hash[recipe]
 # end
 
+
 $options = [:whiskey, :rum, :vodka, :tequila, :gin, :cointreau, :campari, :champagne, :dry_vermouth, :sweet_vermouth, :red_vermouth, :white_rum, :dark_rum, :triple_sec, :vodka_citron, :cognac, :creme_de_menthe, :coffee_liquer, :prosecco, :peach_schnapps, :orange_curacao]
 $results = [] #once user inputs have been pushed here, iterate through and find correlations to recipe_find_hash and puts them to the screen, which after the user chooses a drink will then search through recipe_hash, find that recipe and iterate through to display Drink Name, Ingredients and Preparation.
 
 def collect
 	puts "Give a spirit: "
-	$user_choice = gets.chomp.to_sym
+	$user_choice = gets.chomp.gsub!(' ','_').to_sym
 	if $options.include?($user_choice) == false #if user inputs an option that isn't in options hash
 		puts "Sorry, We dont have that spirit."
 	else
 		$results.push($user_choice) #pushes the user input to the results hash
 	end
 end
+
 
 def startup
 puts "Enter four alcohol choices: "
