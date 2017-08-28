@@ -83,7 +83,7 @@ $results = [] #once user inputs have been pushed here, iterate through and find 
 def collect
 	puts "Give a spirit: "
 	$user_choice = gets.chomp.to_sym
-	if $options.include?(user_choice) == false #if user inputs an option that isn't in options hash
+	if $options.include?($user_choice) == false #if user inputs an option that isn't in options hash
 		puts "Sorry, We dont have that spirit."
 	else
 		$results.push(user_choice) #pushes the user input to the results hash
