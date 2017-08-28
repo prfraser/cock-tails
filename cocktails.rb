@@ -86,7 +86,7 @@ def collect
 	if $options.include?($user_choice) == false #if user inputs an option that isn't in options hash
 		puts "Sorry, We dont have that spirit."
 	else
-		$results.push(user_choice) #pushes the user input to the results hash
+		$results.push($user_choice) #pushes the user input to the results hash
 	end
 end
 
@@ -94,8 +94,8 @@ def startup
 puts "Enter four alcohol choices: "
 	loop do
 		collect
-		break if
-		$user_choice == ":exit"
+		break if #end program with exit message
+		$user_choice == :exit
 	end
 end
 
