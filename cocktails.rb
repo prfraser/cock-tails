@@ -67,7 +67,7 @@ $recipe_hash = {
 	cuba_libre: ["Cuba Libre", "Ingredients: 4 oz Cola, 1/3 oz Fresh lime juice, 1 2/3 oz White rum", "Preparation: Build all ingredients in a highball glass filled with ice. Garnish with lime wedge."],
 	black_russian: ["Black Russian", "Ingredients: 2/3 oz (2 parts) Coffee liqueur, 1 2/3 oz (5 parts) Vodka", "Preparation: Pour the ingredients into an old fashioned glass filled with ice cubes. Stir gently."],
 	sea_breeze: ["Sea Breeze", "Ingredients: 4 oz Cranberry juice, 1 1/3 oz Vodka, 1 oz Grapefruit juice", "Preparation: Build all ingredients in a highball glass filled with ice. Garnish with lime wedge."],
-
+	}
 
 def find_recipe(recipe)
 	puts $recipe_hash[recipe]
