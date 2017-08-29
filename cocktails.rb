@@ -106,13 +106,13 @@ def startup
 	puts "You've chosen #{$results.to_s.gsub(":","").gsub("_"," ")}"
 end
 
-def serve
-	puts $recipe_find_hash.fetch($results, "no match")
-end
+# def serve
+# 	puts $recipe_find_hash.fetch($results, "no match")
+# end
 
 
 startup
-serve
+# serve
 
 
 
